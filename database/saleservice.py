@@ -61,7 +61,7 @@ def delete_sale_db(id: int):
 
 def create_sale_db(model, year, description, price, car_id):
     db = next(get_db())
-    car = db.query(Cars).filter(Cars.id == car_id).first()
+    car = db.query(Cars).filter(id == car_id).first()
     if not car:
         return "Car not found."
 
@@ -79,7 +79,7 @@ def create_sale_db(model, year, description, price, car_id):
 
 def mark_car_as_unavailable(car_id: int):
     db = next(get_db())
-    car = db.query(Cars).filter(Cars.id == car_id).first()
+    car = db.query(Cars).filter(id == car_id).first()
     if car:
         car.car_status = False
         db.commit()
@@ -104,7 +104,7 @@ def return_car_db(sale_id: int):
 
 def mark_car_as_available_db(car_id: int):
     db = next(get_db())
-    car = db.query(Cars).filter(Cars.id == car_id).first()
+    car = db.query(Cars).filter(id == car_id).first()
     if car:
         car.car_status = True
         db.commit()

@@ -3,7 +3,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
 
 # Указываем тип БД (Sqlite, Postgres...)
-SQLALCHEMY_DATABASE_URI = 'sqlite:///rent_sale_cars.db'
+SQLALCHEMY_DATABASE_URI = 'sqlite:///sale_rent_car.db'
 # Создаем движок
 engine = create_engine(SQLALCHEMY_DATABASE_URI, connect_args={'check_same_thread': False})
 # Создаем сессию для хранения данных
