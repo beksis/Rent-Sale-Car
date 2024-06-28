@@ -63,8 +63,7 @@ class Sale(Base):
     price = Column(Float, nullable=False)
     description = Column(String, nullable=True)
     sale_created = Column(DateTime)
-
-    # Foreign key to Cars
+    status = Column(Boolean, default=True)
     car_id = Column(Integer, ForeignKey('cars.id', ondelete='CASCADE'), nullable=False)
 
     # Relationship with Cars
